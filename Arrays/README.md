@@ -218,3 +218,79 @@ The sequence diagram illustrates why array operations have their respective comp
   1. Shift all elements after the insertion point
   2. Update references for each shifted element
   3. Place the new element
+
+## Passing arrays as Functions
+
+In Java, arrays are passed to methods **by value**, but this value is actually a **reference** to the original array in memory. This means the method gets a copy of the reference, and changes made to the array elements within the method affect the original array, but reassigning the reference inside the method won't affect the caller's reference.
+
+Using your example:
+
+```java
+import java.util.*;
+
+class ArraysAsFunctions{
+    public static void update(int marks[]){
+        // marks is a copy of reference to original array
+        for(int i = 0; i < marks.length; i++){
+            marks[i] += 1; // modifies original array elements
+        }
+    }
+    public static void main(String args[]){
+        int marks[] = {99, 100, 101};
+        update(marks); // pass reference by value
+
+        for(int i = 0; i < marks.length; i++){
+            System.out.print(marks[i] + " ");
+        }
+        System.out.println("");
+    }
+}
+```
+
+### Explanation:
+
+- When `marks` is passed to `update`, a **copy of the reference** to the array is passed.
+- Inside `update`, modifying `marks[i]` changes the original array because the reference points to the same array object in memory.
+- If `update` had reassigned `marks` to a new array, that change would **not** reflect outside the method because the original reference in `main` remains unchanged. In simple terms, if we try to change the size of the array, then it will create a new array called `marks` and can only be used inside `update()` method only.
+
+This is why modifications to array elements inside the method show up in `main` after the call - Java passes references **by value**, not by reference itself.
+
+Refer to this code:
+
+```java
+public static void update(int marks[], int nonChangeable){
+    for(int i = 0; i < marks.length; i++){
+        marks[i] += 1;  // modifies original array elements
+    }
+    nonChangeable = 10; // modifies only local copy of the primitive, no effect outside
+}
+
+public static void main(String args[]){
+    int marks[] = {99, 100, 101};
+    int nonChangeable = 5;
+    update(marks, nonChangeable);
+
+    // marks array elements are updated
+    for(int i = 0; i < marks.length; i++){
+        System.out.print(marks[i] + " ");
+    }
+    // nonChangeable unchanged outside update()
+    System.out.println(nonChangeable); // prints 5
+}
+```
+
+**Primitive types** (like int, double, boolean) are passed by value in Java.
+
+This means when you pass `nonChangeable` (an int) to the `update()` method, Java copies the value 5 into a new variable inside the method. Changing this variable `(nonChangeable = 10;)` inside the method only affects the copy, not the original variable declared in main. That's why printing nonChangeable in main still shows 5.
+
+**Arrays in Java are objects**, and when you pass an array to a method, what actually gets passed is the value of the reference (a pointer to the array in memory).
+
+This means the method gets a copy of the reference, which still points to the same array in memory. Modifying the array elements inside the method (marks[i] += 1;) affects the original array, so you see the changes outside the method.
+
+### Summary:
+
+- Java uses **pass-by-value** for everything.
+- For objects (including arrays), the value passed is the **reference** to the object.
+- This allows methods to modify the object/array contents passed in, but not to change the caller's actual reference.
+
+This concept is critical for understanding how arrays and objects behave when passed to functions in Java.
