@@ -1,10 +1,9 @@
-import java.util.*;
 
 public class LinearSearch{
     public static int searchLinear(int arr1[], int key){
         for(int i = 0; i < arr1.length; i++){
             if (arr1[i] == key){
-                return i+1;
+                return i;
             }
         }
         return -1;
