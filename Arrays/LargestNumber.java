@@ -15,3 +15,10 @@ public class LargestNumber{
         System.out.println("The largest number is "+ largest);
     }
 }
+
+// this code can also be extended for smallest number with 
+// int smallest = Integer.MAX_VALUE;
+
+//    Arrays   git:(main)  javac LargestNumber.java 
+//    Arrays   git:(main)  java LargestNumber 
+// The largest number is 101
