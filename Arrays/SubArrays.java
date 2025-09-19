@@ -1,3 +1,7 @@
+// for maximum subarray bruteforce method refet to Test.java
+// this program might fail on negative inputs
+// the suitable program for this question is in KadanesAlgo.java
+
 import java.util.*;
 public class SubArrays {
     public static void findMaxMin(int[] arr1){
