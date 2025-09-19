@@ -1,8 +1,8 @@
 import java.util.*;
 public class SubArrays {
     public static void findMaxMin(int[] arr1){
-        int max = 0;
-        int min = arr1[0]; // assuming the array is sorted
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
         for(int i = 0 ; i < arr1.length; i++){
             if(arr1[i] > max){
                 max = arr1[i];
