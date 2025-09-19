@@ -2,17 +2,21 @@ import java.util.*;
 public class SubArrays {
     public static void findMaxMin(int[] arr1){
         int max = Integer.MIN_VALUE;
+        int maxIndex = 0;
+        int minIndex = 0;
         int min = Integer.MAX_VALUE;
         for(int i = 0 ; i < arr1.length; i++){
             if(arr1[i] > max){
                 max = arr1[i];
+                maxIndex = i; 
             }
             if(arr1[i] < min){
                 min = arr1[i];
+                minIndex = i;
             }
         }
-        System.out.println("Maximum sum: " + max);
-        System.out.println("Minimum sum: " + min);
+        System.out.println("Maximum sum: " + max + " index is " + maxIndex);
+        System.out.println("Minimum sum: " + min + " index is " + minIndex);
         
     }
     public static void printSubArrays(int[] arr){
