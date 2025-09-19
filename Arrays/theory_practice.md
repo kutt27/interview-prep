@@ -1,6 +1,8 @@
-### **Basics & Fundamentals**
+# Theoretical/Conceptual Questions for Practice
 
-1.  **What is an Array in Java?** Explain its fundamental characteristics.
+## Basics & Fundamentals
+
+1. **What is an Array in Java?** Explain its fundamental characteristics.
 
     - _Follow-up: Are arrays in Java primitive data types or objects?_
 
@@ -20,7 +22,7 @@
 
 8.  **How are arrays stored in memory in Java?** (Hint: Discuss the Heap memory and how array variables are reference variables).
 
-### **Intermediate Concepts & Operations**
+## Intermediate Concepts & Operations
 
 9.  **How do you pass an array to a method in Java?** Is it pass-by-value or pass-by-reference? Explain what actually happens.
 

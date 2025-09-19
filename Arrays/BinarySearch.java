@@ -19,8 +19,8 @@ public class BinarySearch{
         return -1;
     }
     public static void main(String[] args) {
-        int arr1[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        int arr1[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}; // sorted array
         int key = 8;
-        System.out.println("The key is found at index: " + search(arr1, key));
+        System.out.println("The key is found at index: " + search(arr1, key)); // assume the key is always present case
     }
 }

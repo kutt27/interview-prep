@@ -1,9 +1,8 @@
-## Array
+# Array
 
 Arrays in Java are fundamental data structures that allow storing multiple values of the same type in contiguous memory locations.
 
 #### Formal Definition and Basic Concepts
-
 An array is a collection of elements of the same data type stored in adjacent memory locations. Key characteristics include:
 
 - Homogeneous data (all elements must be of the same type)
